@@ -4,7 +4,9 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
-final_df=pd.read_csv('india.csv')
+from data_loader import load_data
+
+final_df = load_data()
 final_df.set_index('State name',inplace=True)
 st.title('Analysis of Cencus Data of India')
 st.write('You can analyse the data according to your choice of parameters and states')
