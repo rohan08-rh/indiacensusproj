@@ -5,9 +5,6 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 final_df=pd.read_csv('india.csv')
-import pandas as pd
-import streamlit as st
-
 final_df.set_index('State name',inplace=True)
 list_of_states=final_df['State'].unique().tolist()
 list_of_states.insert(0,'Overall')
