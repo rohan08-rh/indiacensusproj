@@ -5,6 +5,12 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 final_df=pd.read_csv('india.csv')
+import pandas as pd
+import streamlit as st
+
+@st.cache_data
+def load_data():
+    return pd.read_csv("data/india.csv")
 final_df.set_index('State name',inplace=True)
 st.title('Analysis of Cencus Data of India')
 st.write('You can analyse the data according to your choice of parameters and states')
