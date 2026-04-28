@@ -2,9 +2,13 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+from data_loader import load_data
 
+final_df = load_data()
 def render_plot_dataind():
-    final_df = pd.read_csv('india.csv')
+    
+
+    final_df = load_data()
     final_df.set_index('State name', inplace=True)
 
     st.subheader('All-India Visualization')
