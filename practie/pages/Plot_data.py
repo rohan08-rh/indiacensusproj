@@ -5,8 +5,10 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from plot_dataind_module import render_plot_dataind
+from data_loader import load_data
 
-final_df = pd.read_csv('india.csv')
+final_df = load_data()
+
 state = final_df.groupby('State name')
 
 if 'active_mode' not in st.session_state:
