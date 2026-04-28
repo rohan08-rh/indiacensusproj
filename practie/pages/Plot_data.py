@@ -7,6 +7,12 @@ import plotly.graph_objects as go
 from plot_dataind_module import render_plot_dataind
 
 final_df = pd.read_csv('india.csv')
+import pandas as pd
+import streamlit as st
+
+@st.cache_data
+def load_data():
+    return pd.read_csv("data/india.csv")
 state = final_df.groupby('State name')
 
 if 'active_mode' not in st.session_state:
